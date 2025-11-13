@@ -7,18 +7,20 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
   standalone: true,
   imports: [ClipboardModule],
   templateUrl: './contact-me.component.html',
-  styleUrl: './contact-me.component.css'
+  styleUrl: './contact-me.component.css',
 })
 export class ContactMeComponent {
-  constructor(public confettiService: ConfettiService) { }
-  value ="sr.dev.akshay@gmail.com"
+  constructor(public confettiService: ConfettiService) {}
+  value = 'anmolchandrakariiit@gmail.com';
 
   handleClick(event: MouseEvent) {
-    event.preventDefault();  // Prevent default link behavior
+    event.preventDefault(); // Prevent default link behavior
 
     // Trigger confetti animation
     this.confettiService.stars();
     setTimeout(() => {
-      window.location.href = 'https://github.com/Akshayp2002/personal-portfolio-angular';
-    }, 2000);  // Redirect after 2 seconds
-}}
+      window.location.href =
+        'https://github.com/Akshayp2002/personal-portfolio-angular';
+    }, 2000); // Redirect after 2 seconds
+  }
+}
