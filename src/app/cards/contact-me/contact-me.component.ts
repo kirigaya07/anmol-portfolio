@@ -19,8 +19,7 @@ export class ContactMeComponent {
     // Trigger confetti animation
     this.confettiService.stars();
     setTimeout(() => {
-      window.location.href =
-        'https://github.com/Akshayp2002/personal-portfolio-angular';
+      window.location.href = 'https://github.com/kirigaya07/anmol-portfolio';
     }, 2000); // Redirect after 2 seconds
   }
 }
