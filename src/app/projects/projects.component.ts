@@ -169,7 +169,7 @@ export class ProjectsComponent {
       name: 'Thinko',
       description:
         'A full-featured Notion clone with real-time collaborative editing, rich text editor powered by BlockNote, and secure authentication. Provides a modern, responsive experience with light and dark mode themes.',
-      image: 'assets/img/thinko.webp',
+      image: 'assets/img/thinko.png',
       github: 'https://github.com/kirigaya07/Thinko',
       view: 'https://thinko.vercel.app',
       status: false,
