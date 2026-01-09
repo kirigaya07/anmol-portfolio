@@ -34,7 +34,7 @@ export class AboutComponent {
       id: 1,
       company: 'M-Core Pvt. Ltd.',
       position: 'Full Stack Developer Intern(Remote)',
-      time_period: 'May 2025 - July 2025',
+      time_period: 'May 2025 - October 2025',
       place: ' Chennai, Tamil Nadu, India',
       overview:
         'A technology-driven company specializing in automated media solutions, software systems, and digital content workflows.',
