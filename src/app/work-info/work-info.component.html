@@ -14,25 +14,25 @@
     <!-- details Info Section -->
     <div>
         <h3 class="font-bold font-playwrite text-2xl text-sky-800 dark:text-white inline-block m-x-3"> {{
-            details?.company }} <span class="text-xs text-gray-500 dark:text-gray-300 font-sans">{{ details?.place
+            details.company }} <span class="text-xs text-gray-500 dark:text-gray-300 font-sans">{{ details.place
                 }}.</span>
         </h3>
-        <p class=" pl-3">{{ details?.position }}</p>
+        <p class=" pl-3">{{ details.position }}</p>
         <div class="flex gap-2 pl-3">
-            <p>{{ details?.time_period }}</p>
+            <p>{{ details.time_period }}</p>
         </div>
     </div>
     <div>
         <h3 class="font-bold font-playwrite text-2xl text-sky-800 dark:text-white inline-block m-x-2">Overview</h3>
-        <p class="font-medium text-gray-500 dark:text-gray-300 text-md  pl-3">
-            {{ details?.overview }}
+        <p class="font-medium text-gray-500 dark:text-gray-300 text-md pl-3 leading-relaxed whitespace-pre-line">
+            {{ details.overview }}
         </p>
     </div>
     <!-- Role Section -->
     <div>
         <h3 class="font-bold font-playwrite text-2xl text-sky-800 dark:text-white inline-block m-x-3">My Role</h3>
-        <p class="font-medium text-gray-500 dark:text-gray-300 text-md  pl-3">
-            {{ details?.my_role }}
+        <p class="font-medium text-gray-500 dark:text-gray-300 text-md pl-3 leading-relaxed whitespace-pre-line">
+            {{ details.my_role }}
         </p>
     </div>
 
@@ -44,7 +44,7 @@
             @for (tech of details.projects; track $index) {
             <li>
                 <img class="w-32 sm:w-36 object-contain hover:shadow-lg dark:hover:shadow-xl" [src]="tech.image"
-                    alt="projects">
+                    alt="projects" loading="lazy">
                 <p class="font-medium text-gray-500 dark:text-gray-300 text-sm">{{tech.name}}</p>
             </li>
             }
@@ -74,5 +74,5 @@
     <!-- Impact Section -->
     <div>
         <h3 class="font-bold font-playwrite text-2xl text-sky-800 dark:text-white inline-block m-x-3">Impact</h3>
-        <p class="font-medium text-gray-500 dark:text-gray-300 text-md pl-3">{{details?.impact}}</p>
+        <p class="font-medium text-gray-500 dark:text-gray-300 text-md pl-3 leading-relaxed whitespace-pre-line">{{details.impact}}</p>
     </div>

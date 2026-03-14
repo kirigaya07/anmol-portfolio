@@ -5,16 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class MapCacheService {
 
-  private cacheKey = 'mapDetails';
+  private readonly cacheKey = 'mapDetailsV3';
 
   constructor() { }
 
-  getMapDetails(): any {
+  getMapDetails(): string | null {
     const cachedData = sessionStorage.getItem(this.cacheKey);
     return cachedData ? JSON.parse(cachedData) : null;
   }
 
-  setMapDetails(data: any): void {
+  setMapDetails(data: string): void {
     sessionStorage.setItem(this.cacheKey, JSON.stringify(data));
   }
 

@@ -20,4 +20,16 @@ describe('MapsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set loaded state on map load', () => {
+    component.onMapLoad();
+    expect(component.mapLoaded).toBeTrue();
+    expect(component.mapFailed).toBeFalse();
+  });
+
+  it('should set failed state on map error', () => {
+    component.onMapError();
+    expect(component.mapLoaded).toBeFalse();
+    expect(component.mapFailed).toBeTrue();
+  });
 });

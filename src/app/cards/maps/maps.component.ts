@@ -12,28 +12,44 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class MapsComponent implements OnInit {
 
   mapUrl: SafeResourceUrl | null = null;
+  mapLoaded = false;
+  mapFailed = false;
+  readonly fallbackExternalUrl =
+    'https://www.google.com/maps?q=Bengaluru,+Karnataka';
+  private readonly fallbackEmbedUrl =
+    'https://www.openstreetmap.org/export/embed.html?bbox=77.54%2C12.94%2C77.63%2C13.00&layer=mapnik&marker=12.9716%2C77.5946';
 
   constructor(private mapCacheService: MapCacheService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.loadMapUrl();
-    })
+    this.loadMapUrl();
   }
 
   loadMapUrl(): void {
     const cachedUrl = this.mapCacheService.getMapDetails();
+    this.mapLoaded = false;
+    this.mapFailed = false;
 
-    if (cachedUrl) {
+    if (cachedUrl && this.isEmbeddableMapUrl(cachedUrl)) {
       this.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(cachedUrl);
     } else {
-      // The URL you want to cache and use
-      const url =
-        'https://www.google.com/maps/place/Mahasamund,+Chhattisgarh+493445/@21.1128084,82.0846056,14.88z/data=!4m6!3m5!1s0x3a28a58eeaded2a5:0x6a1dc472a931541d!8m2!3d21.1124067!4d82.095962!16zL20vMDg2ZHd3?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D';
-
-      this.mapCacheService.setMapDetails(url);
-      this.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+      this.mapCacheService.setMapDetails(this.fallbackEmbedUrl);
+      this.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.fallbackEmbedUrl);
     }
+  }
+
+  private isEmbeddableMapUrl(url: string): boolean {
+    return url.includes('output=embed') || url.includes('/maps/embed') || url.includes('openstreetmap.org/export/embed.html');
+  }
+
+  onMapLoad(): void {
+    this.mapLoaded = true;
+    this.mapFailed = false;
+  }
+
+  onMapError(): void {
+    this.mapLoaded = false;
+    this.mapFailed = true;
   }
 }
 

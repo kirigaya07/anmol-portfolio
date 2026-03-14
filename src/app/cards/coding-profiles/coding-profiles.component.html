@@ -1,0 +1,75 @@
+<div
+  class="col-span-2 md:col-span-1 rounded-[30px] bg-white dark:bg-gray-800 p-5 h-[280px] hover:shadow-lg dark:hover:shadow-xl flex flex-col gap-3"
+>
+  <div class="flex items-start justify-between gap-3">
+    <div>
+      <h3 class="font-bold font-playwrite text-xl text-black dark:text-white">
+        {{ title }}
+      </h3>
+      <p class="text-xs text-gray-500 dark:text-gray-300 mt-1 leading-relaxed">
+        {{ intro }}
+      </p>
+    </div>
+    <span
+      class="text-[10px] px-2 py-1 rounded-full bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-200"
+    >
+      {{ profiles.length }} Platforms
+    </span>
+  </div>
+
+  <div class="overflow-y-auto pr-1 space-y-2 profile-list">
+    @if (isLoading) {
+    <div class="animate-pulse space-y-2">
+      @for (i of [1,2,3]; track i) {
+      <div class="flex items-center justify-between rounded-xl border border-gray-200 dark:border-gray-700 p-2">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-gray-300 dark:bg-gray-600 rounded-lg"></div>
+          <div class="space-y-1">
+            <div class="h-4 bg-gray-300 dark:bg-gray-600 rounded w-20"></div>
+            <div class="h-3 bg-gray-300 dark:bg-gray-600 rounded w-16"></div>
+          </div>
+        </div>
+        <div class="h-5 bg-gray-300 dark:bg-gray-600 rounded-full w-16"></div>
+      </div>
+      }
+    </div>
+    } @else {
+    @for (profile of profiles; track profile.platform) {
+    <a
+      class="flex items-center justify-between rounded-xl border border-gray-200 dark:border-gray-700 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition"
+      [href]="profile.url"
+      target="_blank"
+      rel="noopener noreferrer"
+      [class.pointer-events-none]="profile.url === '#'"
+      [class.opacity-70]="profile.url === '#'"
+      [attr.aria-label]="'Open ' + profile.platform + ' profile'"
+      matTooltip="{{ profile.platform }} - {{ profile.category }}"
+      matTooltipPosition="above"
+    >
+      <div class="flex items-center gap-2 min-w-0">
+        <img
+          [src]="profile.icon"
+          [alt]="profile.platform + ' icon'"
+          class="w-8 h-8 rounded-lg shrink-0"
+          [class]="profile.accentClass"
+        />
+        <div class="min-w-0">
+          <p class="text-sm font-semibold text-gray-800 dark:text-gray-100 truncate">
+            {{ profile.platform }}
+          </p>
+          <p class="text-xs text-gray-500 dark:text-gray-300 truncate">
+            {{ '@' + profile.username }}
+          </p>
+        </div>
+      </div>
+      <span
+        class="text-[10px] px-2 py-1 rounded-full bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300 flex items-center gap-1"
+      >
+        <img [src]="profile.categoryIcon" [alt]="profile.category + ' icon'" class="w-3 h-3" />
+        {{ profile.category }}
+      </span>
+    </a>
+    }
+    }
+  </div>
+</div>
