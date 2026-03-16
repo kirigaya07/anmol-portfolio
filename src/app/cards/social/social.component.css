@@ -1,24 +1,6 @@
-.insta {
+.insta{
     background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
 }
 .dark .insta {
     background-color: #1f2937;
-}
-
-.profile-list {
-    scrollbar-width: thin;
-    scrollbar-color: #cbd5e1 transparent;
-}
-.profile-list::-webkit-scrollbar {
-    width: 4px;
-}
-.profile-list::-webkit-scrollbar-thumb {
-    background-color: #cbd5e1;
-    border-radius: 4px;
-}
-.dark .profile-list {
-    scrollbar-color: #4b5563 transparent;
-}
-.dark .profile-list::-webkit-scrollbar-thumb {
-    background-color: #4b5563;
 }

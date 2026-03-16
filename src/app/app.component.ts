@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { DarkModeService } from './services/dark-mode.service';
 import {
   Component,
-  HostListener,
   Renderer2,
   ElementRef,
   inject,
@@ -60,14 +59,4 @@ export class AppComponent implements OnInit {
     this.renderer.setStyle(this.el.nativeElement, '-ms-user-select', 'none');
   }
   darkModeService: DarkModeService = inject(DarkModeService);
-  showBackToTop = false;
-
-  @HostListener('window:scroll')
-  onScroll() {
-    this.showBackToTop = window.scrollY > 300;
-  }
-
-  scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
 }

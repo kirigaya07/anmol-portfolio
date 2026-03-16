@@ -10,7 +10,14 @@ import { RouterLink } from '@angular/router';
 })
 export class HowItStartedComponent {
 
-  headding: string = `How it started → how it's going`
-  how: string = `Started with C++ and competitive programming at IIIT Senapati in 2022. Curiosity pulled me toward the web — built my first MERN app in 2024, then levelled up with Next.js and TypeScript. Since then: three internships, five shipped projects, and a genuine love for turning ideas into real software.`
-  date: string = "2022 → Present"
+  headding: string = `How it started vs.
+            how
+            it's
+            going`
+  how: string = `A short personal history as it relates to design and
+            development,and
+            how I've found value in the
+            cross-section between
+            both disciplines.`
+  date: string = "June 1 2024"
 }

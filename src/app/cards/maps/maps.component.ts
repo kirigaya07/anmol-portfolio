@@ -17,7 +17,7 @@ export class MapsComponent implements OnInit {
   readonly fallbackExternalUrl =
     'https://www.google.com/maps?q=Bengaluru,+Karnataka';
   private readonly fallbackEmbedUrl =
-    'https://www.openstreetmap.org/export/embed.html?bbox=77.54%2C12.94%2C77.63%2C13.00&marker=12.9716%2C77.5946';
+    'https://www.openstreetmap.org/export/embed.html?bbox=77.54%2C12.94%2C77.63%2C13.00&layer=mapnik&marker=12.9716%2C77.5946';
 
   constructor(private mapCacheService: MapCacheService, private sanitizer: DomSanitizer) { }
 
