@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {
   CODING_PROFILES,
@@ -8,7 +9,7 @@ import {
 @Component({
   selector: 'app-coding-profiles',
   standalone: true,
-  imports: [MatTooltipModule],
+  imports: [MatTooltipModule, NgClass],
   templateUrl: './coding-profiles.component.html',
   styleUrl: './coding-profiles.component.css',
 })

@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './projects.component.css',
 })
 export class ProjectsComponent {
+  selectedFilter = 'All';
+
   projects: Array<any> = [
     {
       name: 'Zyflow',
@@ -20,27 +22,13 @@ export class ProjectsComponent {
       date: 'October - 2025',
       demo: false,
       personal: true,
+      imgLoaded: false,
       tech: [
-        {
-          name: 'Next.js',
-          image: 'assets/img/nextjs.svg',
-        },
-        {
-          name: 'React',
-          image: 'assets/img/reactjs.svg',
-        },
-        {
-          name: 'Typescript',
-          image: 'assets/img/typescript.svg',
-        },
-        {
-          name: 'Tailwind',
-          image: 'assets/img/tailwindcss.svg',
-        },
-        {
-          name: 'Google Cloud',
-          image: 'assets/img/googlecloud.svg',
-        },
+        { name: 'Next.js', image: 'assets/img/nextjs.svg' },
+        { name: 'React', image: 'assets/img/reactjs.svg' },
+        { name: 'Typescript', image: 'assets/img/typescript.svg' },
+        { name: 'Tailwind', image: 'assets/img/tailwindcss.svg' },
+        { name: 'Google Cloud', image: 'assets/img/googlecloud.svg' },
       ],
     },
     {
@@ -54,31 +42,14 @@ export class ProjectsComponent {
       date: 'February - 2025',
       demo: false,
       personal: true,
+      imgLoaded: false,
       tech: [
-        {
-          name: 'Next.js',
-          image: 'assets/img/nextjs.svg',
-        },
-        {
-          name: 'React',
-          image: 'assets/img/reactjs.svg',
-        },
-        {
-          name: 'Prisma',
-          image: 'assets/img/prisma.png',
-        },
-        {
-          name: 'PostgreSQL',
-          image: 'assets/img/postgresql.svg',
-        },
-        {
-          name: 'Clerk',
-          image: 'assets/img/clerk.svg',
-        },
-        {
-          name: 'Tailwind',
-          image: 'assets/img/tailwindcss.svg',
-        },
+        { name: 'Next.js', image: 'assets/img/nextjs.svg' },
+        { name: 'React', image: 'assets/img/reactjs.svg' },
+        { name: 'Prisma', image: 'assets/img/prisma.png' },
+        { name: 'PostgreSQL', image: 'assets/img/postgresql.svg' },
+        { name: 'Clerk', image: 'assets/img/clerk.svg' },
+        { name: 'Tailwind', image: 'assets/img/tailwindcss.svg' },
       ],
     },
     {
@@ -92,35 +63,15 @@ export class ProjectsComponent {
       date: 'September - 2025',
       demo: false,
       personal: true,
+      imgLoaded: false,
       tech: [
-        {
-          name: 'Next.js',
-          image: 'assets/img/nextjs.svg',
-        },
-        {
-          name: 'React',
-          image: 'assets/img/reactjs.svg',
-        },
-        {
-          name: 'Typescript',
-          image: 'assets/img/typescript.svg',
-        },
-        {
-          name: 'Drizzle',
-          image: 'assets/img/drizzle.svg',
-        },
-        {
-          name: 'PostgreSQL',
-          image: 'assets/img/postgresql.svg',
-        },
-        {
-          name: 'Clerk',
-          image: 'assets/img/clerk.svg',
-        },
-        {
-          name: 'Tailwind',
-          image: 'assets/img/tailwindcss.svg',
-        },
+        { name: 'Next.js', image: 'assets/img/nextjs.svg' },
+        { name: 'React', image: 'assets/img/reactjs.svg' },
+        { name: 'Typescript', image: 'assets/img/typescript.svg' },
+        { name: 'Drizzle', image: 'assets/img/drizzle.svg' },
+        { name: 'PostgreSQL', image: 'assets/img/postgresql.svg' },
+        { name: 'Clerk', image: 'assets/img/clerk.svg' },
+        { name: 'Tailwind', image: 'assets/img/tailwindcss.svg' },
       ],
     },
     {
@@ -134,35 +85,15 @@ export class ProjectsComponent {
       date: 'July - 2024',
       demo: false,
       personal: true,
+      imgLoaded: false,
       tech: [
-        {
-          name: 'React',
-          image: 'assets/img/reactjs.svg',
-        },
-        {
-          name: 'Node.js',
-          image: 'assets/img/nodejs.svg',
-        },
-        {
-          name: 'Express',
-          image: 'assets/img/expressjs.svg',
-        },
-        {
-          name: 'MongoDB',
-          image: 'assets/img/mongodb.svg',
-        },
-        {
-          name: 'Redux',
-          image: 'assets/img/redux.svg',
-        },
-        {
-          name: 'Firebase',
-          image: 'assets/img/firebase.svg',
-        },
-        {
-          name: 'Tailwind',
-          image: 'assets/img/tailwindcss.svg',
-        },
+        { name: 'React', image: 'assets/img/reactjs.svg' },
+        { name: 'Node.js', image: 'assets/img/nodejs.svg' },
+        { name: 'Express', image: 'assets/img/expressjs.svg' },
+        { name: 'MongoDB', image: 'assets/img/mongodb.svg' },
+        { name: 'Redux', image: 'assets/img/redux.svg' },
+        { name: 'Firebase', image: 'assets/img/firebase.svg' },
+        { name: 'Tailwind', image: 'assets/img/tailwindcss.svg' },
       ],
     },
     {
@@ -176,28 +107,31 @@ export class ProjectsComponent {
       date: 'August - 2025',
       demo: false,
       personal: true,
+      imgLoaded: false,
       tech: [
-        {
-          name: 'Next.js',
-          image: 'assets/img/nextjs.svg',
-        },
-        {
-          name: 'React',
-          image: 'assets/img/reactjs.svg',
-        },
-        {
-          name: 'Typescript',
-          image: 'assets/img/typescript.svg',
-        },
-        {
-          name: 'Clerk',
-          image: 'assets/img/clerk.svg',
-        },
-        {
-          name: 'Tailwind',
-          image: 'assets/img/tailwindcss.svg',
-        },
+        { name: 'Next.js', image: 'assets/img/nextjs.svg' },
+        { name: 'React', image: 'assets/img/reactjs.svg' },
+        { name: 'Typescript', image: 'assets/img/typescript.svg' },
+        { name: 'Clerk', image: 'assets/img/clerk.svg' },
+        { name: 'Tailwind', image: 'assets/img/tailwindcss.svg' },
       ],
     },
   ];
+
+  get allTechs(): string[] {
+    const techSet = new Set<string>();
+    this.projects.forEach(p => p.tech.forEach((t: any) => techSet.add(t.name)));
+    return ['All', ...Array.from(techSet)];
+  }
+
+  get filteredProjects(): any[] {
+    if (this.selectedFilter === 'All') return this.projects;
+    return this.projects.filter(p =>
+      p.tech.some((t: any) => t.name === this.selectedFilter)
+    );
+  }
+
+  setFilter(filter: string) {
+    this.selectedFilter = filter;
+  }
 }

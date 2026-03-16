@@ -22,8 +22,8 @@ Collaboration with the product team and designers helped me align UI functionali
     projects: [
       {
         name: 'Automated Video Generation Platform',
-        link: '#',
-        image: '#',
+        link: '',
+        image: '',
       },
     ],
     tech: [

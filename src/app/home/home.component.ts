@@ -3,19 +3,19 @@ import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ProfileComponent } from '../cards/profile/profile.component';
 import { Project2Component } from '../cards/project-2/project-2.component';
-import { Project1Component } from '../cards/project-1/project-1.component';
 import { GithubComponent } from '../cards/github/github.component';
 import { HowItStartedComponent } from '../cards/how-it-started/how-it-started.component';
 import { TechsComponent } from '../cards/techs/techs.component';
 import { MapsComponent } from '../cards/maps/maps.component';
 import { ContactMeComponent } from '../cards/contact-me/contact-me.component';
 import { DarkmodeComponent } from '../cards/darkmode/darkmode.component';
+import { SocialComponent } from '../cards/social/social.component';
 import { CodingProfilesComponent } from '../cards/coding-profiles/coding-profiles.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatSlideToggleModule, ProfileComponent, MapsComponent, TechsComponent, DarkmodeComponent, CodingProfilesComponent, ContactMeComponent, HowItStartedComponent, GithubComponent, Project1Component, Project2Component],
+  imports: [CommonModule, MatSlideToggleModule, ProfileComponent, MapsComponent, TechsComponent, DarkmodeComponent, SocialComponent, CodingProfilesComponent, ContactMeComponent, HowItStartedComponent, GithubComponent, Project2Component],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
