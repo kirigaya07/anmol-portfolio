@@ -1,4 +1,28 @@
 <div class="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 p-4 px-10 xl:px-32 pb-20 content">
+
+    <!-- Stats bar -->
+    <div class="col-span-2 lg:col-span-4 bg-white dark:bg-gray-800 rounded-[20px] px-6 py-3 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
+        <div class="flex flex-col items-center">
+            <span class="text-xl font-bold font-mono text-sky-500">3</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400">Internships</span>
+        </div>
+        <div class="w-px h-8 bg-gray-200 dark:bg-gray-700 hidden sm:block"></div>
+        <div class="flex flex-col items-center">
+            <span class="text-xl font-bold font-mono text-sky-500">5</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400">Projects</span>
+        </div>
+        <div class="w-px h-8 bg-gray-200 dark:bg-gray-700 hidden sm:block"></div>
+        <div class="flex flex-col items-center">
+            <span class="text-xl font-bold font-mono text-sky-500">32+</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400">Tools</span>
+        </div>
+        <div class="w-px h-8 bg-gray-200 dark:bg-gray-700 hidden sm:block"></div>
+        <div class="flex flex-col items-center">
+            <span class="text-xl font-bold font-mono text-sky-500">2+</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400">Years</span>
+        </div>
+    </div>
+
     <!-- Profile Card -->
     <app-profile [ngClass]="profile" />
 
@@ -8,11 +32,10 @@
     <app-techs [ngClass]="techs" />
     <!-- Spotify -->
     <app-darkmode [ngClass]="spotify" />
+    <!-- Socials -->
+    <app-social [ngClass]="spotify"></app-social>
     <!-- Coding profiles -->
-    <app-coding-profiles [ngClass]="spotify"></app-coding-profiles>
-    <!-- row 2 vertical netflix-->
-
-    <app-project-1 [ngClass]="project1" />
+    <app-coding-profiles [ngClass]="project1"></app-coding-profiles>
 
 
     <app-how-it-started [ngClass]="profile" />
