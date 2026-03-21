@@ -7,8 +7,16 @@
         <!-- Message -->
         <p class="text-xl font-semibold text-gray-800 dark:text-white">Page not found</p>
         <p class="text-gray-500 dark:text-gray-400 text-sm">
-            Looks like this page doesn't exist or was moved. Head back home.
+            Looks like this page doesn't exist or was moved. Here are some helpful links:
         </p>
+
+        <!-- Suggested links -->
+        <div class="flex flex-wrap justify-center gap-2 w-full">
+            <a routerLink="/home" class="rounded-full border border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 px-4 py-1.5 text-sm hover:border-sky-400 hover:text-sky-500 transition duration-200">Home</a>
+            <a routerLink="/about" class="rounded-full border border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 px-4 py-1.5 text-sm hover:border-sky-400 hover:text-sky-500 transition duration-200">About</a>
+            <a routerLink="/projects" class="rounded-full border border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 px-4 py-1.5 text-sm hover:border-sky-400 hover:text-sky-500 transition duration-200">Projects</a>
+            <a routerLink="/tools" class="rounded-full border border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 px-4 py-1.5 text-sm hover:border-sky-400 hover:text-sky-500 transition duration-200">Tools</a>
+        </div>
 
         <!-- Go Home button -->
         <a routerLink="/home">

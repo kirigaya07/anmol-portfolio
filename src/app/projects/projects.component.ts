@@ -1,5 +1,24 @@
 import { Component } from '@angular/core';
 
+interface ProjectTech {
+  name: string;
+  image: string;
+}
+
+interface Project {
+  name: string;
+  description: string;
+  image: string;
+  github: string | false;
+  view: string | false;
+  status: boolean;
+  date: string;
+  demo: boolean;
+  personal: boolean;
+  imgLoaded: boolean;
+  tech: ProjectTech[];
+}
+
 @Component({
   selector: 'app-projects',
   standalone: true,
@@ -10,14 +29,14 @@ import { Component } from '@angular/core';
 export class ProjectsComponent {
   selectedFilter = 'All';
 
-  projects: Array<any> = [
+  projects: Project[] = [
     {
       name: 'Zyflow',
       description:
-        'A modern workflow management application built with Next.js and TypeScript, providing seamless task organization and productivity features for teams and individuals.',
+        'Teams were losing track of tasks across scattered tools. Zyflow brings everything into one place — a fast, keyboard-friendly workflow board built with Next.js and TypeScript that keeps individuals and teams focused.',
       image: 'assets/img/zyflow.png',
       github: 'https://github.com/kirigaya07/Zyflow',
-      view: false,
+      view: 'https://zyflow-gold.vercel.app/',
       status: true,
       date: 'October - 2025',
       demo: false,
@@ -34,7 +53,7 @@ export class ProjectsComponent {
     {
       name: 'AspireAI',
       description:
-        'AspireAI is an AI-powered career development platform that helps users build resumes, prepare for interviews, and gain industry insights. It leverages AI-driven tools to provide personalized career guidance and continuous professional growth.',
+        'Job seekers struggle with generic advice that doesn\'t reflect their actual profile. AspireAI gives personalized, AI-driven guidance — from resume building to mock interviews — so every user gets a career plan built around them.',
       image: 'assets/img/aspireai.png',
       github: 'https://github.com/kirigaya07/AspireAI',
       view: 'https://asp-ai.vercel.app/',
@@ -55,7 +74,7 @@ export class ProjectsComponent {
     {
       name: 'Linkyard',
       description:
-        'An infinite whiteboard for your links. Linkyard transforms how you organize and interact with web content by providing a spatial, visual approach to bookmark management with live previews and drag-and-drop functionality.',
+        'Bookmarks pile up fast and folder structures don\'t scale. Linkyard gives you an infinite visual whiteboard to organise links spatially — with live previews and drag-and-drop — so you can actually find what you saved.',
       image: 'assets/img/linkyard.png',
       github: 'https://github.com/kirigaya07/linkyard',
       view: 'https://linkyard-pi.vercel.app',
@@ -77,7 +96,7 @@ export class ProjectsComponent {
     {
       name: 'Zudo`s Blog',
       description:
-        'A feature-rich blogging platform built using the MERN stack with user authentication via Google OAuth and JWT, profile management, commenting system, and an admin dashboard. Features a modern UI with dark mode.',
+        'Most blogging tools are either too simple or too heavy. Zudo\'s Blog is a full MERN-stack platform with Google OAuth, a comment system, and an admin dashboard — built to understand the full lifecycle of a production web app.',
       image: 'assets/img/blogsite.png',
       github: 'https://github.com/kirigaya07/Mern-Blog',
       view: 'https://mern-blog-j641.onrender.com/',
@@ -99,7 +118,7 @@ export class ProjectsComponent {
     {
       name: 'Thinko',
       description:
-        'A full-featured Notion clone with real-time collaborative editing, rich text editor powered by BlockNote, and secure authentication. Provides a modern, responsive experience with light and dark mode themes.',
+        'Notion\'s power comes at the cost of complexity. Thinko strips it back to what matters — a real-time collaborative editor with BlockNote, secure auth via Clerk, and a clean UI that gets out of your way.',
       image: 'assets/img/thinko.png',
       github: 'https://github.com/kirigaya07/Thinko',
       view: 'https://thinko.vercel.app',
@@ -120,14 +139,14 @@ export class ProjectsComponent {
 
   get allTechs(): string[] {
     const techSet = new Set<string>();
-    this.projects.forEach(p => p.tech.forEach((t: any) => techSet.add(t.name)));
+    this.projects.forEach(p => p.tech.forEach((t: ProjectTech) => techSet.add(t.name)));
     return ['All', ...Array.from(techSet)];
   }
 
-  get filteredProjects(): any[] {
+  get filteredProjects(): Project[] {
     if (this.selectedFilter === 'All') return this.projects;
     return this.projects.filter(p =>
-      p.tech.some((t: any) => t.name === this.selectedFilter)
+      p.tech.some((t: ProjectTech) => t.name === this.selectedFilter)
     );
   }
 

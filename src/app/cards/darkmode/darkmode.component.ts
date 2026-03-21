@@ -13,8 +13,6 @@ export class DarkmodeComponent {
   darkModeService: DarkModeService = inject(DarkModeService);
 
   toggleDarkMode() {
-    console.log("working");
-    
     this.darkModeService.updateDarkMode();
   }
 }

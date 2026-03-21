@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './github.component.css'
 })
 export class GithubComponent {
-  showGraph = false;
+  showGraph = true;
 
-  toggle(event: MouseEvent) {
+  toggle(event: Event) {
     // Don't toggle when clicking the GitHub link
     if ((event.target as HTMLElement).closest('a')) return;
     this.showGraph = !this.showGraph;
